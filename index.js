@@ -7,7 +7,7 @@ process.env.BR_CONFIG = __dirname;
     try{
         await config.load();
 
-        let files = ['config.json', 'lib'];
+        let files = ['config.json', 'lib', 'node_modules'];
 
         backup.run('', false, files);
     } catch(err){
