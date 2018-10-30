@@ -1,4 +1,5 @@
 {
     "current": "",
-    "destinations": []
+    "destinations": [],
+    "maxBlockSize": 2000000
 }
