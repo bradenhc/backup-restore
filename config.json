@@ -1,5 +1,7 @@
 {
-    "current": "",
-    "destinations": [],
+    "destination": {
+        "current": "/home/braden/tmp",
+        "all": ["/home/braden/tmp"]
+    },
     "maxBlockSize": 2000000
 }

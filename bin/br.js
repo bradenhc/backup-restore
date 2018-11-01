@@ -16,8 +16,9 @@ program
 
 program.parse(process.argv);
 
-function _backup(files, options){
+async function _backup(files, options){
     try {
+        await config.load();
         backup.run(options.name, options.encrypt, files);
     } catch(err){
         console.log(err);
