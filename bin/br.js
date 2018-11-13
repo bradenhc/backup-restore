@@ -1,6 +1,4 @@
 const backup = require('../lib/backup');
-const restore = require('../lib/restore');
-const config = require('../lib/config');
 const program = require('commander');
 
 program
@@ -16,10 +14,15 @@ program
 
 program.parse(process.argv);
 
-async function _backup(files, options){
+async function _backup(dirs, options){
     try {
-        await config.load();
-        backup.run(options.name, options.encrypt, files);
+        await backup.init(options.name, options.encrypt);
+        let files = [];
+        for(let dir of dirs){
+            files = files.concat(await backup.gather(dir));
+            console.log(files.length);
+        }
+        await backup.compress(files);
     } catch(err){
         console.log(err);
     }
