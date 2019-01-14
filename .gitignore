@@ -1,6 +1,7 @@
 # Custom
 .data/
 *.zip
+tmp/
 
 # Logs
 logs
